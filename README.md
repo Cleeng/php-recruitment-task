@@ -52,9 +52,9 @@ cancellation) but is not implemented. Implement it per the spec, with tests.
 ### 3. (Optional bonus) API documentation
 
 API Platform is a dependency of this app but is not wired up. Expose
-interactive OpenAPI documentation for the existing endpoints (e.g. at
-`/api/docs`). Note in `NOTES.md` where your docs live and which approach
-you took.
+OpenAPI documentation for the existing endpoints — all of them, error
+responses included, with `make test` still green. Note in `NOTES.md` where
+your docs live and how you did it.
 
 ## Time & expectations
 
