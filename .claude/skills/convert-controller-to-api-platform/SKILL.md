@@ -26,8 +26,13 @@ but nothing is wired: no routes, no resources.
            mapping:
                paths: ['%kernel.project_dir%/src/ApiResource']
 
-3. Verify: `GET /api/docs` renders the Swagger UI (an empty spec is fine at
-   this point). If it 404s, check the route import and clear the cache.
+3. Verify by requesting the OpenAPI document itself, not an HTML UI: this
+   stack does not have `symfony/twig-bundle` installed, so Swagger UI,
+   ReDoc, and Scalar stay disabled and `GET /api/docs` returns a JSON-LD
+   document (not a rendered page). Request the OpenAPI JSON directly, e.g.
+   `GET /api/docs.jsonopenapi` (API Platform 4's format-suffixed routing)
+   — an empty `paths: {}` is fine at this point. If that 404s, check the
+   route import and clear the cache.
 
 ## Phase 1: Inventory what you document
 
@@ -38,6 +43,7 @@ documentation must not invent or omit fields.
 
 ## Phase 2: Verify
 
-- The docs page renders every documented operation with correct schemas.
+- Every existing endpoint appears in the document, with the schemas and
+  error responses the spec requires.
 - `make test` is green — the existing suite keeps passing unchanged.
 - Nothing in `openspec/specs/` is contradicted by the live behavior.
