@@ -1,0 +1,4 @@
+api_platform:
+    title: 'Subscription API'
+    version: '1.0.0'
+    doctrine: false
