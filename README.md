@@ -83,6 +83,15 @@ not described in the specs. Don't build it.
 ## Submitting
 
 Clone this repository and push it to a **private** repository on your own
-GitHub account — that's where you work and commit. When you're done, make
-sure everything is pushed and give `michalmlynarczykcleeng` read access so
-we can review your work before the follow-up conversation.
+GitHub account — that's where you work and commit. Please clone rather than
+fork: a fork is always as public as the repository it came from, which would
+put your solution and your application in the open.
+
+    git clone git@github.com:Cleeng/php-recruitment-task.git
+    cd php-recruitment-task
+    git remote set-url origin git@github.com:<you>/<your-private-repo>.git
+    git push -u origin main
+
+When you're done, make sure everything is pushed and give
+`michalmlynarczykcleeng` read access so we can review your work before the
+follow-up conversation.
